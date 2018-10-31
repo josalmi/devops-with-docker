@@ -11,6 +11,7 @@ import imageio
 from keras import backend
 from flask_cors import CORS, cross_origin
 from io import BytesIO
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -33,7 +34,15 @@ def test():
 if __name__ == '__main__':
   load_dotenv()
   debug = os.getenv('ENV') == 'development'
-  global model 
-  model = pickle.load(open('./model/kurkkumopotin.sav', 'rb'))
+  global model
+  while True:
+    try:
+      model = pickle.load(open('./model/kurkkumopotin.sav', 'rb'))
+      break
+    except:
+      print("Model not found. Waiting 15 seconds to retry...")
+      time.sleep(15)
+      continue
+
 
   app.run("0.0.0.0", port=5000, debug=debug)
