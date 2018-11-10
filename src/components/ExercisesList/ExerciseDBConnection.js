@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   message: ''
 }
 
-class Exercise_2_5 extends Component {
+class ExerciseDBConnection extends Component {
   state = INITIAL_STATE
 
   handleGetMessages = this.props.getMessages
@@ -17,10 +17,9 @@ class Exercise_2_5 extends Component {
 
   render() {
     const { messages } = this.props
-    const secretMessage = window.atob("Q29uZ3JhdHVsYXRpb25zISBZb3UgY29uZmlndXJlZCB5b3VyIHBvcnRzIGNvcnJlY3RseSE=")
     return (
       <div>
-        <span> Exercise 2.5:</span>
+        <span> Exercise {this.props.exerciseNumber}:</span>
         <Input id='message'
           placeholder="Write message here"
           value={this.state.message}
@@ -48,4 +47,4 @@ const mapDispatchToProps = dispatch => ({
   getMessages: () => dispatch(getMessages()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Exercise_2_5)
+export default connect(mapStateToProps, mapDispatchToProps)(ExerciseDBConnection)

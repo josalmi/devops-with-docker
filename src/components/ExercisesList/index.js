@@ -1,24 +1,24 @@
 import React from 'react'
 
-import Exercise_1_3 from './Exercise_1_3'
-import Exercise_1_5 from './Exercise_1_5'
-import Exercise_2_2 from './Exercise_2_2'
-import Exercise_2_3 from './Exercise_2_3'
-import Exercise_2_5 from './Exercise_2_5'
+import ExerciseAmIRunning from './ExerciseAmIRunning'
+import ExerciseBackendConnection from './ExerciseBackendConnection'
+import ExerciseNginxSetup from './ExerciseNginxSetup'
+import ExerciseRedisSetup from './ExerciseRedisSetup'
+import ExerciseDBConnection from './ExerciseDBConnection'
 
 const ExerciseList = () => (
     <div style={{ paddingTop: '1em' }}>
         <h3>Part 1</h3>
-        <Exercise_1_3 />
+        <ExerciseAmIRunning exerciseNumber="1.4" />
         <hr />
-        <Exercise_1_5 />
+        <ExerciseBackendConnection exerciseNumber="1.6" />
         <hr />
         <h3>Part 2</h3>
-        <Exercise_2_2 />
+        <ExerciseRedisSetup exerciseNumber="2.2" />
         <hr />
-        <Exercise_2_3 />
+        <ExerciseDBConnection exerciseNumber="2.3" />
         <hr />
-        <Exercise_2_5 />
+        <ExerciseNginxSetup exerciseNumber="2.5" />
         <hr />
     </div>
 )

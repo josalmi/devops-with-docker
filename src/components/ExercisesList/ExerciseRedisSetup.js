@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button } from 'semantic-ui-react'
 import axios from 'axios'
 
-class Exercise_2_3 extends Component {
+class ExerciseRedisSetup extends Component {
   state = {
     pending: false,
     success: false,
@@ -34,7 +34,7 @@ class Exercise_2_3 extends Component {
   render() {
     return (
       <div>
-        <span> Exercise 2.3: </span>
+        <span> Exercise {this.props.exerciseNumber}: </span>
         <Button color={this.state.success ? "green" : "orange"} onClick={this.testConnection} disabled={this.state.pending}>
           Press to Test!
         </Button>
@@ -46,4 +46,4 @@ class Exercise_2_3 extends Component {
 }
 
 
-export default Exercise_2_3
+export default ExerciseRedisSetup
