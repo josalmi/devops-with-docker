@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import MessageComponent from './MessageComponent'
+import ExercisesList from './ExercisesList'
 
-export default class OnlyView extends Component {
-    render = () => {
-      return (
-        <div>
-          <MessageComponent />
-        </div >
-      )
-    }
-}
+export default () => (
+  <div>
+    <ExercisesList />
+  </div >
+)

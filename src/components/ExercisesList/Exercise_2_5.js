@@ -2,30 +2,34 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Input, Button, List } from 'semantic-ui-react'
 
-import { postMessage } from '../util/redux/messageReducer'
+import { getMessages, postMessage } from '../../util/redux/messageReducer'
 
 const INITIAL_STATE = {
   message: ''
 }
 
-class MessageComponent extends Component {
+class Exercise_2_5 extends Component {
   state = INITIAL_STATE
 
-  handlePost = () => this.props.postMessage(this.state.message)
+  handleGetMessages = this.props.getMessages
+  handlePostMessage = () => this.props.postMessage(this.state.message)
   handleChange = event => this.setState({ [event.target.id]: event.target.value })
-  
+
   render() {
     const { messages } = this.props
     const secretMessage = window.atob("Q29uZ3JhdHVsYXRpb25zISBZb3UgY29uZmlndXJlZCB5b3VyIHBvcnRzIGNvcnJlY3RseSE=")
     return (
-      <div style={{ paddingTop: '1em' }}>
-        <div>
-          <span> {secretMessage} </span>
-        </div>
-        <span>This is here to test connection between containers when you're connecting backend and database:</span>
-        <Input id='message' value={this.state.message} onChange={this.handleChange} />
-        <Button color="purple" onClick={this.handlePost}>
-          Send!
+      <div>
+        <span> Exercise 2.5:</span>
+        <Input id='message'
+          placeholder="Write message here"
+          value={this.state.message}
+          onChange={this.handleChange} />
+        <Button color="purple" onClick={this.handlePostMessage}>
+          Send message!
+        </Button>
+        <Button color="purple" onClick={this.handleGetMessages}>
+          Get all messages!
         </Button>
         <List>
           {messages.map(message => <List.Item key={message.id}>{message.body}</List.Item>)}
@@ -41,6 +45,7 @@ const mapStateToProps = ({ messages }) => ({
 
 const mapDispatchToProps = dispatch => ({
   postMessage: message => dispatch(postMessage({ message })),
+  getMessages: () => dispatch(getMessages()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(Exercise_2_5)

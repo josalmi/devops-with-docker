@@ -1,7 +1,4 @@
 import callBuilder from '../apiConnection'
-/**
- * Actions and reducers are in the same file for readability
- */
 
 export const postMessage = message => {
   const route = '/messages'
@@ -9,10 +6,19 @@ export const postMessage = message => {
   return callBuilder(route, prefix, 'post', message)
 }
 
-// Reducer
-// You can include more app wide actions such as "selected: []" into the state
+export const getMessages = () => {
+  const route = '/messages'
+  const prefix = 'GET_MESSAGES'
+  return callBuilder(route, prefix)
+}
+
 export default (state = { data: [] }, action) => {
   switch (action.type) {
+    case 'GET_MESSAGES_SUCCESS':
+      return {
+        ...state,
+        data: action.response
+      }
     case 'CREATE_MESSAGE_ATTEMPT':
       return {
         ...state,
@@ -27,7 +33,6 @@ export default (state = { data: [] }, action) => {
     case 'CREATE_MESSAGE_SUCCESS':
       return {
         ...state,
-        data: [...state.data.filter(item => item.id !== action.response.id), action.response],
         pending: false,
         error: false,
       }
