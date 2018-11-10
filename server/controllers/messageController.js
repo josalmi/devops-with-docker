@@ -1,19 +1,28 @@
-/**
- * Simple example for backend
- */
-const fs = require('fs');
-let messages = []
-let simpleId = 0
+import Message from '../models/message'
+import fs from 'fs'
 
-export const createMessage = (req, res) => {
-    const message = req.body.message || "Empty message"
-    
-    const logString = new Date().toLocaleString() + ": " + message + "\n"
-    fs.appendFileSync('logs.txt', logString);
-    const newMessage = {
-        id: simpleId++,
-        body: message
+export const createMessage = async (req, res) => {
+    try {
+        const message = req.body.message || "Empty message"
+        const logString = new Date().toLocaleString() + ": " + message + "\n"
+        fs.appendFileSync('logs.txt', logString);
+
+        if (!Message) return res.status(503).send('No database connection')
+        Message.create({
+            body: message
+        })
+        res.sendStatus(201).end()
+    } catch (err) {
+        res.sendStatus(500).end()
     }
-    messages.push(newMessage)
-    res.send(newMessage).end()
+}
+
+export const getMessages = async (req, res) => {
+    try {
+        if (!Message) return res.status(503).send('No database connection')
+        const messages = await Message.findAll()
+        res.send(messages).end()
+    } catch (err) {
+        res.sendStatus(500).end()
+    }
 }
