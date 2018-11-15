@@ -17,7 +17,7 @@ You can alternatively build the project with `npm build` and then serve it in an
 
 To use a npm package called serve to serve the project in port 5000:
 - install: `npm install -g serve`
-- serve: `npm serve -s -l 5000 dist`
+- serve: `serve -s -l 5000 dist`
 
 By default the expected path to backend is /api. To manually configure api path run with `API_URL=<url> npm start|build`
 
