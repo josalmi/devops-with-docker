@@ -6,6 +6,14 @@ This project is created to help learn docker configurations for frontend project
 
 Install [node](https://nodejs.org/en/download/). 
 
+Example node install instructions for LTS node 10.x:
+```
+curl -sL https://deb.nodesource.com/setup_10.x | bash
+sudo apt install -y nodejs
+```
+
+Check your install with `node -v && npm -v`
+
 Install all packages with `npm install`
 
 # Starting in production mode
@@ -17,7 +25,7 @@ You can alternatively build the project with `npm build` and then serve it in an
 
 To use a npm package called serve to serve the project in port 5000:
 - install: `npm install -g serve`
-- serve: `npm serve -s -l 5000 dist`
+- serve: `serve -s -l 5000 dist`
 
 By default the expected path to backend is /api. To manually configure api path run with `API_URL=<url> npm start|build`
 

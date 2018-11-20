@@ -7,17 +7,6 @@ const webpack = require('webpack')
 
 module.exports = (env, argv) => {
   const API_URL = process.env.API_URL || '/api'
-  const { mode } = argv
-  const additionalPlugins = mode === 'production' ? [new UglifyJsPlugin()] : [] // Make JS smaller
-  const additionalOptimizations = mode === 'production' ? {
-    splitChunks: {
-      chunks: 'all',
-    },
-    minimizer: [
-      // Make CSS smaller
-      new OptimizeCssAssetsPlugin(),
-    ],
-  } : {}
   return {
     entry: [
       '@babel/polyfill', // babel-polyfill so we don't need to import it anywhere
@@ -46,7 +35,13 @@ module.exports = (env, argv) => {
       ],
     },
     optimization: {
-      ...additionalOptimizations,
+      splitChunks: {
+        chunks: 'all',
+      },
+      minimizer: [
+        // Make CSS smaller
+        new OptimizeCssAssetsPlugin(),
+      ],
     },
     plugins: [
       new webpack.DefinePlugin({ 
@@ -63,7 +58,7 @@ module.exports = (env, argv) => {
         filename: '[name].css',
         chunkFilename: '[name]-[id].css',
       }),
-      ...additionalPlugins,
+      new UglifyJsPlugin()
     ],
   }
 }

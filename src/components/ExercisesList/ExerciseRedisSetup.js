@@ -12,22 +12,41 @@ class ExerciseRedisSetup extends Component {
 
   testConnection = async () => {
     this.setState({ pending: true, error: false, success: false })
+    const beforeRequest = (new Date()).getTime()
     try {
-      const beforeRequest = (new Date()).getTime()
       const res = await axios.get(process.env.API_URL + '/slow')
       const afterRequest = (new Date()).getTime()
       const diffSeconds = (afterRequest - beforeRequest) / 1000
-      const success = res.data === "pong" && diffSeconds < 10 
+      if (res.data !== "pong") {
+        throw new Error('Not pong')
+      }
+      if (diffSeconds > 10) {
+        throw new Error('Too slow')
+      }
       this.setState({ pending: false, success, responseTime: diffSeconds })
     } catch (err) {
-      this.setState({ error: true, pending: false })
+      let error
+      const afterRequest = (new Date()).getTime()
+      const diffSeconds = (afterRequest - beforeRequest) / 1000
+
+      if (err && err.response && err.response.status === 404) {
+        error = "Request sent to unknown address, 404. Check network tab where the request was sent."
+      }
+      if (err.message === 'Not pong') {
+        error = "Response was not what was expected. Check network tab where the request was sent."
+      }
+      if (err.message === 'Too slow') {
+        error = "Response was correct but it was slow, did you set up the cache correctly?"
+      }
+      this.setState({ error, pending: false, responseTime: diffSeconds })
     }
   }
 
   message = () => {
-    const timeString = this.state.responseTime ? `It took ${this.state.responseTime} seconds` : ''
-    if (this.state.error) return `Not working correctly. ${timeString}`
-    if (this.state.success) return `Working! ${timeString}`
+    const { responseTime, success, error } = this.state
+    const timeString = responseTime ? `It took ${responseTime} seconds.` : ''
+    if (error) return `Not working correctly. ${timeString} ${error}`
+    if (success) return `Working! ${timeString}`
     return timeString
   }
 
