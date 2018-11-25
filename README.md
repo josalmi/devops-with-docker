@@ -21,7 +21,7 @@ Install all packages with `npm install`
 To build and serve in production mode: `npm start`
 This builds the project in dist folder and serves it in port 5000.
 
-You can alternatively build the project with `npm build` and then serve it in any way you want, for example:
+You can alternatively build the project with `npm run build` and then serve it in any way you want, for example:
 
 To use a npm package called serve to serve the project in port 5000:
 - install: `npm install -g serve`
