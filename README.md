@@ -6,6 +6,12 @@ This project is created to help learn docker configurations for backend projects
 
 Install [node](https://nodejs.org/en/download/). 
 
+Example node install instructions for LTS node 10.x:
+```
+curl -sL https://deb.nodesource.com/setup_10.x | bash
+sudo apt install -y nodejs
+```
+
 Install all packages with `npm install`
 
 # Starting in production mode
