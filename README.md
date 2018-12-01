@@ -16,13 +16,19 @@ Install all packages with `npm install`
 
 # Starting in production mode
 
-To start the server in production mode: `npm start`
+The following are needed from exercise 1.5 onward. Notice, that not everything is necessary for all the exercises.
 
-If your frontend is not running in the same origin, run the server with `FRONT_URL=<front-url> npm start` to allow cross-origin requests.
+## Exercise 1.5 onwards
+
+To start the server in production mode: `npm start`
 
 Test that the project is running by going to <http://localhost:8000>
 
-# Using redis
+## Exercise 1.6 and beyond
+
+If your frontend is not running in the same origin, run the server with `FRONT_URL=<front-url> npm start` to allow cross-origin requests.
+
+# Using redis - Part 2 onwards
 
 Use redis by running the server with environment variable `REDIS=<hostname>`. For example `REDIS=localhost`. You can also define port with `REDIS_PORT=<port-number>`, defaults to 6379.
 
