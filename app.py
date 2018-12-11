@@ -24,7 +24,7 @@ def ping():
 @app.route('/kurkkuvaimopo', methods=["POST"])
 def test():
   data = request.files.get('img', '')
-  data = imageio.imread(data)
+  data = imageio.imread(data, pilmode="RGB")
   data = imresize(data, (128,128))
   with backend.get_session().graph.as_default() as g:
       res = model.predict(np.array(data).reshape(1, 128, 128, 3))
