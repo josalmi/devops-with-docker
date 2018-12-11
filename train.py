@@ -51,8 +51,11 @@ def get_images(prefix, url):
       identifier = str(uuid.uuid4())
       uri = "imgs/" + prefix + identifier + ".jpg"
       imageio.imwrite(uri, img)
+    except (FileNotFoundError):
+        raise
     except:
        return
+
     return uri
 
 if __name__ == "__main__":
