@@ -33,6 +33,9 @@ def test():
 
 if __name__ == '__main__':
   load_dotenv()
+  if not os.path.isdir("./model"):
+    print("NO MODEL VOLUME")
+    exit(1)
   debug = os.getenv('ENV') == 'development'
   global model
   while True:
