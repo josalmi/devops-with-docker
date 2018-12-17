@@ -9,9 +9,9 @@ import ExerciseDBConnection from './ExerciseDBConnection'
 const ExerciseList = () => (
     <div style={{ paddingTop: '1em' }}>
         <h3>Part 1</h3>
-        <ExerciseAmIRunning exerciseNumber="1.4" />
+        <ExerciseAmIRunning exerciseNumber="1.5" />
         <hr />
-        <ExerciseBackendConnection exerciseNumber="1.6" />
+        <ExerciseBackendConnection exerciseNumber="1.7" />
         <hr />
         <h3>Part 2</h3>
         <ExerciseRedisSetup exerciseNumber="2.2" />
