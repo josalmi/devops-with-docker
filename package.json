@@ -29,7 +29,7 @@
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
     "cross-env": "^5.2.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.9"
   },
   "babel": {
     "presets": [
