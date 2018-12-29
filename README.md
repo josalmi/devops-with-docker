@@ -53,3 +53,22 @@ How to run:
 docker build -t curler 104
 docker run --rm -it curler
 ```
+
+
+### Exercise 1.5
+
+Dockerfile:
+```
+FROM node:10-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --production && npm cache clear --force
+COPY . .
+CMD ["npm", "start"]
+EXPOSE 5000
+```
+
+```
+docker build -t devops-105 105
+docker run --rm -p 5000:5000 devops-105
+```
