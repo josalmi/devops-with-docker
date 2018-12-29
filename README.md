@@ -24,16 +24,32 @@ REPOSITORY          TAG                 IMAGE ID            CREATED          SIZ
 
 ### Exercise 1.3
 
+```
+$ docker run --rm -it ubuntu
+
+# apt-get update && apt-get install -y curl
+# sh -c 'read website; sleep 3; curl http://$website;'
+```
+
+### Exercise 1.4
+
+curler.sh:
+```sh
+#!/bin/sh
+read website; sleep 3; curl http://$website;
+```
 
 Dockerfile:
 ```
 FROM ubuntu
 RUN apt-get update && apt-get install -y curl
-CMD ["sh", "-c", "read website; sleep 3; curl http://$website;"]
+WORKDIR /app
+COPY curler.sh ./
+CMD ["/app/curler.sh"]
 ```
 
 How to run:
 ```
-docker build -t devops-103 -f Dockerfile-103 .
-docker run --rm -it devops-103
+docker build -t curler 104
+docker run --rm -it curler
 ```
