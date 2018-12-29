@@ -57,17 +57,6 @@ docker run --rm -it curler
 
 ### Exercise 1.5
 
-Dockerfile:
-```
-FROM node:10-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --production && npm cache clear --force
-COPY . .
-CMD ["npm", "start"]
-EXPOSE 5000
-```
-
 ```
 docker build -t devops-105 105
 docker run --rm -p 5000:5000 devops-105
@@ -75,19 +64,12 @@ docker run --rm -p 5000:5000 devops-105
 
 ### Exercise 1.6
 
-Dockerfile:
-```
-FROM node:10-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install && npm cache clear --force
-COPY . .
-CMD ["npm", "start"]
-EXPOSE 8000
-```
-
 ```
 docker build -t devops-106 106
 docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt devops-106
 ```
+
+### Exercise 1.7
+
+See exercises 1.5 and 1.6.
 
