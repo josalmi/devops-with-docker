@@ -21,3 +21,19 @@ CONTAINER ID        IMAGE               COMMAND             CREATED          STA
 $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED          SIZE
 ```
+
+### Exercise 1.3
+
+
+Dockerfile:
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl
+CMD ["sh", "-c", "read website; sleep 3; curl http://$website;"]
+```
+
+How to run:
+```
+docker build -t devops-103 -f Dockerfile-103 .
+docker run --rm -it devops-103
+```
