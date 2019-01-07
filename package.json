@@ -1,6 +1,7 @@
 {
   "name": "backend-example-docker",
   "version": "1.0.0",
+  "repository": "https://github.com/docker-hy/backend-example-docker",
   "description": "Example backend project for docker course",
   "main": "index.js",
   "scripts": {
