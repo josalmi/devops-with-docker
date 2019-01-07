@@ -20,10 +20,10 @@ class ExerciseRedisSetup extends Component {
       if (res.data !== "pong") {
         throw new Error('Not pong')
       }
-      if (diffSeconds > 10) {
+      if (diffSeconds > 1) {
         throw new Error('Too slow')
       }
-      this.setState({ pending: false, success, responseTime: diffSeconds })
+      this.setState({ pending: false, success: true, responseTime: diffSeconds })
     } catch (err) {
       let error
       const afterRequest = (new Date()).getTime()
