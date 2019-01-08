@@ -35,4 +35,4 @@ Test that the project is running by going to <http://localhost:5000>
 
 ## Exercise 1.6 and beyond
 
-By default the expected path to backend is /api. To manually configure api path run with `API_URL=<url> npm start|build`
+By default the expected path to backend is /api. To manually configure api path run with `API_URL` environment value set, for example `API_URL=<url> npm start|build`
