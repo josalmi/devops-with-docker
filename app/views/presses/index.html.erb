@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= pluralize(@presses.count, 'press')%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @presses.reverse.each do |press| %>
+      <tr>
+        <td><%= link_to press.created_at, press %> </td>
+        <td><%= link_to 'Destroy', press, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Press more', new_press_path %>
