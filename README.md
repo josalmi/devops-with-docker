@@ -18,13 +18,13 @@ Install all packages with `npm install`
 
 The following are needed from exercise 1.5 onward. Notice, that not everything is necessary for all the exercises.
 
-## Exercise 1.5 onwards
+## Exercise 1.11 -> starting project
 
 To start the server in production mode: `npm start`
 
 Test that the project is running by going to <http://localhost:8000>
 
-## Exercise 1.6 and beyond
+## Exercise 1.12 -> accepting connections
 
 If your frontend is not running in the same origin, run the server with `FRONT_URL=<front-url> npm start` to allow cross-origin requests.
 
