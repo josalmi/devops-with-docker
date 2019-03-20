@@ -2,6 +2,8 @@
 
 # Installation
 
+Make sure you have a JavaScript runtime such as node installed.
+
 ## If you do not have ruby installed
 
 Install ruby version 2.6.0 with [rbenv](https://github.com/rbenv/rbenv).
@@ -27,3 +29,5 @@ Precompile your assets with `rake assets:precompile`
 Run `rails s -e production` to start the project in production mode
 
 (To get error output use `RAILS_LOG_TO_STDOUT=true rails s -e production`)
+
+### The application by default runs in port 3000
