@@ -28,8 +28,10 @@ class ExerciseRedisSetup extends Component {
       let error
       const afterRequest = (new Date()).getTime()
       const diffSeconds = (afterRequest - beforeRequest) / 1000
-
-      if (err && err.response && err.response.status === 404) {
+      if (!err.response) {
+        error = "Backend is not up or has crashed"
+      }
+      if (err.response && err.response.status === 404) {
         error = "Request sent to unknown address, 404. Check network tab where the request was sent."
       }
       if (err.message === 'Not pong') {
