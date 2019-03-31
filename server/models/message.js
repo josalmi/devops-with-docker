@@ -3,25 +3,40 @@ import sequelize from '../database/connection'
 
 let Message
 
-const sync = async sequelize => {
-    try {
-        await sequelize.sync()
-    } catch (err) {
-        console.error(err)
-        console.log('Errored before messages were initialized in database')
-        process.exit(1)
-    }
-}
-
 if (sequelize) {
-    Message = sequelize.define('message', {
-        body: Sequelize.STRING,
-    }, {
-        tablename: 'messages',
-        timestamps: true
+  Message = sequelize.define('message', {
+    body: Sequelize.STRING,
+  }, {
+      tablename: 'messages',
+      timestamps: true
     });
-
-    sync(sequelize)
 }
+
+const promiseWait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const timeout = 3
+
+const syncDBWithModels = async (sequelize, tries = 5) => {
+  try {
+    console.log('Testing database connection')
+    await sequelize.authenticate() // Test the connection
+    console.log('Connection ok, syncing database with model.')
+    await sequelize.sync()
+    console.log('Database connection established!')
+    return
+  } catch (err) {
+    if (!tries) {
+      console.log(err, 'Database connection failed,')
+      process.exit(1)
+    }
+    console.warn(err,
+      'Connection to database database failed, tries left',
+      tries,
+      'trying again in', timeout, 'seconds')
+  }
+  await promiseWait(timeout * 1000)
+  return syncDBWithModels(sequelize, tries - 1)
+}
+
+syncDBWithModels(sequelize)
 
 export default Message

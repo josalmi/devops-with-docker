@@ -13,6 +13,8 @@ export const createMessage = async (req, res) => {
         })
         res.sendStatus(201).end()
     } catch (err) {
+        console.log(err)
+        console.log('Database connection suddenly dropped.')
         res.sendStatus(500).end()
     }
 }
@@ -23,6 +25,8 @@ export const getMessages = async (req, res) => {
         const messages = await Message.findAll()
         res.send(messages).end()
     } catch (err) {
+        console.log(err)
+        console.log('Database connection suddenly dropped.')
         res.sendStatus(500).end()
     }
 }
