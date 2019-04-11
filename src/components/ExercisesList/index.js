@@ -14,9 +14,9 @@ const ExerciseList = () => (
         <ExerciseBackendConnection exerciseNumber="1.12" />
         <hr />
         <h3>Part 2</h3>
-        <ExerciseRedisSetup exerciseNumber="2.4" />
+        <ExerciseRedisSetup exerciseNumber="2.5" />
         <hr />
-        <ExerciseDBConnection exerciseNumber="2.5" />
+        <ExerciseDBConnection exerciseNumber="2.6" />
         <hr />
         <ExerciseNginxSetup exerciseNumber="2.8" />
         <hr />
