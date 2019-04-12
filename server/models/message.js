@@ -16,6 +16,7 @@ const promiseWait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const timeout = 3
 
 const syncDBWithModels = async (sequelize, tries = 5) => {
+  if (!sequelize) return
   try {
     console.log('Testing database connection')
     await sequelize.authenticate() // Test the connection
