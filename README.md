@@ -23,9 +23,9 @@ Notice, that all the information are not needed in all the exercises.
 ## Exercise 1.10 -> to run the project
 
 To build and serve in production mode: `npm start`
-This builds the project in dist folder and serves it in port 5000.
+This builds the project to `dist` folder and serves it in port 5000.
 
-You can alternatively build the project with `npm run build` and then serve it in any way you want, for example:
+You can alternatively build the project with `npm run build` to build the project to `dist` folder and then serve it in any way you want, for example:
 
 To use a npm package called serve to serve the project in port 5000:
 - install: `npm install -g serve`
