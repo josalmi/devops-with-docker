@@ -79,3 +79,11 @@ See exercises 1.5 and 1.6.
 ```
 docker run --rm -v (pwd)/108/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
 ```
+
+### Exercise 1.9
+
+```
+docker run --rm -p 8080:80 devopsdockeruh/ports_exercise
+```
+
+
