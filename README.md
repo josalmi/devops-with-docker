@@ -104,3 +104,6 @@ docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt 111
 [Frontend Dockerfile](110/Dockerfile)
 [Backend Dockerfile](111/Dockerfile)
 
+### Exercise 1.13
+
+[Dockerfile](113/Dockerfile)
