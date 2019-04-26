@@ -86,4 +86,15 @@ docker run --rm -v (pwd)/108/logs.txt:/usr/app/logs.txt devopsdockeruh/first_vol
 docker run --rm -p 8080:80 devopsdockeruh/ports_exercise
 ```
 
+### Exercise 1.10
 
+[Dockerfile](110/Dockerfile)
+
+### Exercise 1.11
+
+[Dockerfile](111/Dockerfile)
+
+```
+docker build -t 111 .
+docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt 111
+```
