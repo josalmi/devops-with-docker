@@ -29,6 +29,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-# To avoid sending exercise solutions
-Dockerfile

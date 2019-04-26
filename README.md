@@ -107,3 +107,9 @@ docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt 111
 ### Exercise 1.13
 
 [Dockerfile](113/Dockerfile)
+
+### Exercise 1.14
+
+Had to add `SECRET_KEY_BASE` environment variable to get the server running. Precompiled assets are not loaded but I think this is due to configuration / having to setup nginx to serve the assets. 
+
+[Dockerfile](114/Dockerfile)
