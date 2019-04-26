@@ -73,3 +73,9 @@ docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt devops-106
 
 See exercises 1.5 and 1.6.
 
+
+### Exercise 1.8
+
+```
+docker run --rm -v (pwd)/108/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+```
