@@ -140,5 +140,10 @@ Had to add `SECRET_KEY_BASE` environment variable to get the server running. Pre
 ### Exercise 2.04
 
 ```
+docker-compose up
 docker-compose scale compute=3
 ```
+
+### Exercise 2.05
+
+[docker-compose.yml](205/docker-compose.yml)
