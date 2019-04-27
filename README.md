@@ -113,3 +113,8 @@ docker run --rm -p 8000:8000 -v (pwd)/logs.txt:/app/logs.txt 111
 Had to add `SECRET_KEY_BASE` environment variable to get the server running. Precompiled assets are not loaded but I think this is due to configuration / having to setup nginx to serve the assets. 
 
 [Dockerfile](114/Dockerfile)
+
+### Exercise 1.15
+
+[Dockerfile](https://github.com/josalmi/hello-world-nodejs-docker-kubernetes/blob/master/Dockerfile)
+[Docker Hub](https://hub.docker.com/r/jsal/hello-world-nodejs)
