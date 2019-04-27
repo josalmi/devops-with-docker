@@ -122,3 +122,9 @@ Had to add `SECRET_KEY_BASE` environment variable to get the server running. Pre
 ### Exercise 1.16
 
 [Heroku](https://dockerdevops.herokuapp.com/)
+
+## Part 2
+
+### Exercise 2.01
+
+[docker-compose.yml](201/docker-compose.yml)
