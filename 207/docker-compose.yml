@@ -1,0 +1,21 @@
+version: '3'
+services:
+  backend:
+    build: backend
+    ports:
+      - 5000:5000
+    volumes:
+      - training_data:/src/model
+  frontend:
+    build: frontend
+    ports:
+      - 3000:3000
+  training:
+    build: training
+    volumes:
+      - training_data:/src/model
+      - images:/src/imgs
+
+volumes:
+  training_data:
+  images:
