@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: '111'
+    ports:
+      - 8000:8000
+    volumes:
+      - ./logs.txt:/usr/app/logs.txt
+  frontend:
+    image: '110'
+    ports:
+      - 5000:5000
