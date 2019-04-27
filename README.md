@@ -118,3 +118,7 @@ Had to add `SECRET_KEY_BASE` environment variable to get the server running. Pre
 
 [Dockerfile](https://github.com/josalmi/hello-world-nodejs-docker-kubernetes/blob/master/Dockerfile)
 [Docker Hub](https://hub.docker.com/r/jsal/hello-world-nodejs)
+
+### Exercise 1.16
+
+[Heroku](https://dockerdevops.herokuapp.com/)
