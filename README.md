@@ -147,3 +147,7 @@ docker-compose scale compute=3
 ### Exercise 2.05
 
 [docker-compose.yml](205/docker-compose.yml)
+
+### Exercise 2.06
+
+[docker-compose.yml](206/docker-compose.yml)

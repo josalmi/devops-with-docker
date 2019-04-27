@@ -1,0 +1,23 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=passu 
+  backend:
+    image: '111'
+    ports:
+      - 8000:8000
+    volumes:
+      - ./logs.txt:/usr/app/logs.txt
+    environment:
+      - REDIS=redis
+      - DB_HOST=postgres
+      - DB_USERNAME=postgres 
+      - DB_PASSWORD=passu 
+  frontend:
+    image: '110'
+    ports:
+      - 5000:5000
