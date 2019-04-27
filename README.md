@@ -128,3 +128,7 @@ Had to add `SECRET_KEY_BASE` environment variable to get the server running. Pre
 ### Exercise 2.01
 
 [docker-compose.yml](201/docker-compose.yml)
+
+### Exercise 2.02
+
+[docker-compose.yml](202/docker-compose.yml)
