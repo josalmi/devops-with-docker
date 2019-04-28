@@ -162,3 +162,7 @@ docker-compose scale compute=3
 [nginx.conf](208/nginx.conf)
 [Dockerfile frontend](110/Dockerfile)
 [Dockerfile backend](111/Dockerfile)
+
+### Exercise 2.09
+
+[docker-compose.yml](209/docker-compose.yml)

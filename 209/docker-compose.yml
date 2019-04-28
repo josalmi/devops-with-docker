@@ -1,0 +1,38 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=passu 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  backend:
+    image: '111'
+    build:
+      context: ../111
+    volumes:
+      - ./logs.txt:/usr/app/logs.txt
+    environment:
+      - REDIS=redis
+      - DB_HOST=postgres
+      - DB_USERNAME=postgres 
+      - DB_PASSWORD=passu 
+  frontend:
+    image: '110'
+    build:
+      context: ../110
+      args:
+        API_URL: '/api' # http://localhost:8080/api
+    environment:
+      - API_URL=http://localhost:8080
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8080:80
+
+volumes:
+  postgres_data:
