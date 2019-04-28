@@ -166,3 +166,7 @@ docker-compose scale compute=3
 ### Exercise 2.09
 
 [docker-compose.yml](209/docker-compose.yml)
+
+### Exercise 2.10
+
+Everything seems to be working already.
