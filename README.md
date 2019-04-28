@@ -173,6 +173,10 @@ Everything seems to be working already.
 
 ## Part 3
 
+### Exercise 3.02
+
+[Dockerfile](302/Dockerfile)
+
 ### Exercise 3.03
 
 [Dockerfile frontend](110/Dockerfile)
