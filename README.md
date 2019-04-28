@@ -170,3 +170,10 @@ docker-compose scale compute=3
 ### Exercise 2.10
 
 Everything seems to be working already.
+
+## Part 3
+
+### Exercise 3.03
+
+[Dockerfile frontend](110/Dockerfile)
+[Dockerfile backend](111/Dockerfile)
